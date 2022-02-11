@@ -25,19 +25,16 @@ let sum = 0;
  console.log (`Is Correct:`,isCorrect)
 
 let visa = ['4'];
-let mastercard = ['2','51','52','53','54','55'];
-let maestro = ['50','58','630','67'];
-let first = number.slice(0,1);
-let second = number.slice(0,2);
-let third = number.slice(0,3);
+let mastercard = ['51','52','53','54','55'];
+let maestro = ['5018','5020','5038','5893','6304','6759','6761','6762','6763','676770','676774'];
 
 if (isCorrect == true) 
    { 
-     if (visa.includes(first))
+     if ((visa.includes(number.slice(0,1)))||(visa.includes(number.slice(0,4)))||(visa.includes(number.slice(0,6))))
        {console.log('Your payment system - Visa');}
-     else if ((mastercard.includes(first))||(mastercard.includes(second)))
-       {console.log('Your payment system - MasterCard');}
-     else if ((maestro.includes(second))||(maestro.includes(third)))
+     else if ( (mastercard.includes(number.slice(0,2))||((number.slice(0,4)>=2221)&&(number.slice(0,4)<=2720))) )
+         {console.log('Your payment system - MasterCard');}
+     else if ((maestro.includes(number.slice(0,4)))||(maestro.includes(number.slice(0,6))))
        {console.log('Your payment system - Maestro');}
      else
         {console.log('Your payment system - another');}
